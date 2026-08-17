@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Felíz Cumpleaños, Cielito♡</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            ¡Yuu's Web!(●'◡'●)
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#home">Inicio</a>
+
+            <a href="#playlist">Playlist</a>
+
+            <a href="#memories">This is US!</a>
+
+            <a href="#things">Te amo porque...</a>
+
+            <a href="#letter">Cartita</a>
+
+        </div>
+
+        <div class="heart">
+            ♡
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                Un pequeño detalle para el amor de mi vida
+            </p>
+
+            <h1>
+                Un pedacito
+                <br>
+                <span>de mi♡</span>
+            </h1>
+
+            <p class="made">
+                Hecho con mucho amor (〃＾▽＾〃)
+            </p>
+
+            <p class="instructions">
+                Escuchalo mientras lees →
+            </p>
+
+            <button onclick="scrollToPlaylist()">
+                ▶ PLAY
+            </button>
+
+        </div>
+
+
+        <div class="cd-container">
+
+            <div class="cd">
+
+                <div class="cd-center">
+                    <span>16</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PLAYLIST
+    ========================== -->
+
+    <section id="playlist" class="section">
+
+        <div class="tape-title">
+
+            <span>
+                Primera Parte♡
+            </span>
+
+            <small>
+                Canciones que me recuerdan a ti
+            </small>
+
+        </div>
+
+
+        <div class="playlist-layout">
+
+
+            <!-- LISTA DE CANCIONES -->
+
+            <div class="songs">
+
+
+                <!-- CANCIÓN 01 -->
+
+                <div class="song active"
+                     onclick="playSong(0)">
+
+                    <span>01</span>
+
+                    <div>
+                        <strong>Out of my league</strong>
+                        <small>Fitz and The Tantrums</small>
+                    </div>
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <!-- CANCIÓN 02 -->
+
+                <div class="song"
+                     onclick="playSong(1)">
+
+                    <span>02</span>
+
+                    <div>
+                        <strong>Love wins all</strong>
+                        <small>IU</small>
+                    </div>
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <!-- CANCIÓN 03 -->
+
+                <div class="song"
+                     onclick="playSong(2)">
+
+                    <span>03</span>
+
+                    <div>
+                        <strong>Glue Song (ft. Clairo)</strong>
+                        <small>beabadoobee, Clairo</small>
+                    </div>
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <!-- CANCIÓN 04 -->
+
+                <div class="song"
+                     onclick="playSong(3)">
+
+                    <span>04</span>
+
+                    <div>
+                        <strong>Risk It All</strong>
+                        <small>Bruno Mars</small>
+                    </div>
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <!-- CANCIÓN 05 -->
+
+                <div class="song"
+                     onclick="playSong(4)">
+
+                    <span>05</span>
+
+                    <div>
+                        <strong>A Night to Remember</strong>
+                        <small>Laufey & beabadoobee</small>
+                    </div>
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <!-- CANCIÓN 06 -->
+
+                <div class="song"
+                     onclick="playSong(5)">
+
+                    <span>06</span>
+
+                    <div>
+                        <strong>Valentine</strong>
+                        <small>Laufey</small>
+                    </div>
+
+                    <span>♡</span>
+
+                </div>
+
+
+                <!-- CANCIÓN 07 -->
+
+                <div class="song"
+                     onclick="playSong(6)">
+
+                    <span>07</span>
+
+                    <div>
+                        <strong>Only</strong>
+                        <small>LEEHI</small>
+                    </div>
+
+                    <span>♡</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 REPRODUCTOR
+            ========================== -->
+
+            <div class="player">
+
+                <div class="album-small">
+                    💿
+                </div>
+
+                <div class="player-info">
+
+                    <strong id="currentSong">
+                        Out of my league
+                    </strong>
+
+                    <small id="currentArtist">
+                        Fitz and The Tantrums
+                    </small>
+
+                </div>
+
+
+                <div class="controls">
+
+                    <button onclick="previousSong()">
+                        ◀
+                    </button>
+
+                    <button id="playButton"
+                            onclick="togglePlay()">
+                        ▶
+                    </button>
+
+                    <button onclick="nextSong()">
+                        ▶
+                    </button>
+
+                </div>
+
+
+                <div class="progress">
+
+                    <div class="progress-bar"></div>
+
+                </div>
+
+
+                <div class="time">
+
+                    <span id="currentTime">
+                        0:00
+                    </span>
+
+                    <span id="duration">
+                        0:00
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- REPRODUCTOR MP3 -->
+
+        <audio id="audio"></audio>
+
+    </section>
+
+
+    <!-- =========================
+         DETALLE DE CANCIÓN
+    ========================== -->
+
+    <section class="song-detail">
+
+        <div class="polaroid">
+
+            <div class="fake-photo">
+
+                <img
+                    src="images/imag.jpeg"
+                    alt="Nuestro recuerdo"
+                >
+
+            </div>
+
+            <p>
+                Nuestro primer ship
+            </p>
+
+        </div>
+
+
+        <div class="note">
+
+            <p class="track-number">
+                07. Only - LEEHI
+            </p>
+
+            <h2>
+                ¿Por qué esta canción?
+            </h2>
+
+            <p>
+                Creo que está de más explicarlo.
+                Fue de las primeras canciones que
+                nos llegamos a dedicar y se volvió
+                parte de nuestra relación.
+            </p>
+
+            <span class="little-heart">
+                ♡
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================== -->
+
+    <section id="memories"
+             class="section memories">
+
+        <div class="tape-title">
+
+            <span>
+                Segunda Parte♡
+            </span>
+
+            <small>
+                Nuestro primer ship
+            </small>
+
+        </div>
+
+
+        <div class="photos">
+
+
+            <!-- FOTO 02 -->
+
+            <div class="photo">
+
+                <div class="photo-image">
+
+                    <img
+                        src="images/imag2.jpg"
+                        alt="Nuestro primer recuerdo"
+                    >
+
+                </div>
+
+                <p>
+                    ♡
+                </p>
+
+            </div>
+
+
+            <!-- FOTO 03 -->
+
+            <div class="photo">
+
+                <div class="photo-image">
+
+                    <img
+                        src="images/imag3.jpeg"
+                        alt="One of my favorites"
+                    >
+
+                </div>
+
+                <p>
+                    ♡
+                </p>
+
+            </div>
+
+
+            <!-- FOTO 04 -->
+
+            <div class="photo">
+
+                <div class="photo-image">
+
+                    <img
+                        src="images/imag4.jpeg"
+                        alt="Our memory"
+                    >
+
+                </div>
+
+                <p>
+                    ♡
+                </p>
+
+            </div>
+
+
+            <!-- FOTO 05 -->
+
+            <div class="photo">
+
+                <div class="photo-image">
+
+                    <img
+                        src="images/imag5.jpeg"
+                        alt="A happy memory"
+                    >
+
+                </div>
+
+                <p>
+                    ♡
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         16 COSAS DE TI
+    ========================== -->
+
+    <section id="things"
+             class="section things">
+
+        <div class="tape-title">
+
+            <span>
+                TE AMO PORQUE...♡
+            </span>
+
+            <small>
+                16(+1) cosas que amo de ti♡ 
+            </small>
+
+        </div>
+
+
+        <div class="paper">
+
+            <div class="things-column">
+
+                <p><b>01.</b> Te amo porque eres creativo</p>
+                <p><b>02.</b> Te amo porque sabes comunicarte</p>
+                <p><b>03.</b> Te amo porque sabes escuchar</p>
+                <p><b>04.</b> Te amo porque tienes una linda voz</p>
+                <p><b>05.</b> Te amo porque eres elocuente</p>
+                <p><b>06.</b> Te amo porque eres paciente</p>
+                <p><b>07.</b> Te amo porque abes hacerme reir</p>
+                <p><b>08.</b> Te amo porque se que estas para mi</p>
+                <p><b>09.</b> Te amo porque no te das por vencido</p>
+
+            </div>
+
+
+            <div class="things-column">
+
+                <p><b>10.</b> Te amo porque tienes una manera de pensar única</p>
+                <p><b>11.</b> Te amo porque tus consejos siempre son útiles</p>
+                <p><b>12.</b> Te amo porque cómo vez las cosas es diferente</p>
+                <p><b>13.</b> Te amo porque por tus pequeños detalles</p>
+                <p><b>14.</b> Te amo porque nuestras conversaciones son especiales</p>
+                <p><b>15.</b> Te amo porque tu forma de querer es única</p>
+                <p><b>16.</b> Te amo porque nuestra conexión es especial</p>
+                <p><b></b> Te amo porque simplemente eres tú ♡</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CARTA
+    ========================== -->
+
+    <section id="letter"
+             class="letter-section">
+
+        <div class="letter">
+
+            <div class="letter-label">
+                EL ÚLTIMO DETALLE ♡
+            </div>
+
+            <h2>
+                ¡Felíz cumple, mi amor!
+            </h2>
+
+            <p>
+                Este año te queria hacer algo diferente
+                y tambien queria que algo especial
+                y dificil de que alguien más te haga algo asi
+                jejeje uwu
+            </p>
+
+            <p>
+                Es un día muy especial para ti y para mi, ya que cumples 16, 
+                eres la persona que mas amo en este mundo y el cual
+                sabe como hacerme feliz, me demuestras tu amor de 
+                muchas lindas maneras, y yo queria devolverte uno
+                de los miles detalles que me has dado.
+            
+
+            </p>
+
+            <p>
+                Te deseo un muy lindo día, que nada ni nadie
+                te desanime, ya que es tu día y hay que 
+                festejarlo como nunca, que las cosas te entren 
+                por un oido y te salgan por el otro ;p
+                
+            </p>
+
+            <p>
+                Gracias por existir y por seguir luchando cada
+                día, eres mucho mas de lo que imaginas, 
+                no dejes que nadie te diga lo contrario. 
+                Te amo mucho muchooo, amorcito
+                （〃｀ 3′〃）
+            <p class="signature">
+                con mucho amor ♡
+                <br>
+                ABIGAIL
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FINAL
+    ========================== -->
+
+    <footer>
+
+        <p>
+            ✦ FIN DE LA WEB ✦
+        </p>
+
+        <h2>
+            happy birthday ♡
+        </h2>
+
+        <p>
+            17.08.2010
+        </p>
+
+        <small>
+            Espero y te haya gustado, mi vida.
+        </small>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
