@@ -7,43 +7,43 @@ const songs = [
     {
         title: "Out of my league",
         artist: "Fitz and The Tantrums",
-        file: "music/Out of my league.mp3"
+        file: "Out of my league.mp3"
     },
 
     {
         title: "Love wins all",
         artist: "IU",
-        file: "music/Love wins all.mp3"
+        file: "Love wins all.mp3"
     },
 
     {
         title: "Glue Song (ft. Clairo)",
         artist: "beabadoobee, Clairo",
-        file: "music/Glue song.mp3"
+        file: "Glue song.mp3"
     },
 
     {
         title: "Risk It All",
         artist: "Bruno Mars",
-        file: "music/Risk it all.mp3"
+        file: "Risk it all.mp3"
     },
 
     {
         title: "A Night to Remember",
         artist: "Laufey & beabadoobee",
-        file: "music/A Night to Remember.mp3"
+        file: "A Night to Remember.mp3"
     },
 
     {
         title: "Valentine",
         artist: "Laufey",
-        file: "music/Valentine.mp3"
+        file: "Valentine.mp3"
     },
 
     {
         title: "Only",
         artist: "LEEHI",
-        file: "music/Only.mp3"
+        file: "Only.mp3"
     }
 ];
 
