@@ -31,7 +31,7 @@ const songs = [
     {
         title: "A Night to Remember",
         artist: "Laufey & beabadoobee",
-        file: "A Night to Remember.mp3"
+        file: "A night to remember.mp3"
     },
 
     {
@@ -43,8 +43,9 @@ const songs = [
     {
         title: "Only",
         artist: "LEEHI",
-        file: "Only.mp3"
+        file: "only.mp3"
     }
+
 ];
 
 
@@ -53,7 +54,6 @@ const songs = [
 ========================= */
 
 let currentSong = 0;
-
 let isPlaying = false;
 
 
@@ -127,12 +127,12 @@ function playSong(index) {
         .catch((error) => {
 
             console.error(
-                "No se pudo reproducir el MP3:",
+                "Error al reproducir:",
                 error
             );
 
             alert(
-                "No se pudo reproducir la canción. Revisa que el MP3 esté dentro de la carpeta music ♡"
+                "No se pudo reproducir esta canción. Revisa que el archivo MP3 esté en el mismo lugar que index.html ♡"
             );
 
         });
@@ -169,10 +169,13 @@ function togglePlay() {
             })
             .catch((error) => {
 
-                console.error(error);
+                console.error(
+                    "Error al reproducir:",
+                    error
+                );
 
                 alert(
-                    "No se pudo reproducir el MP3 ♡"
+                    "No se pudo reproducir la canción ♡"
                 );
 
             });
